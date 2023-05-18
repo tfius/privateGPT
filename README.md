@@ -13,6 +13,11 @@ In order to set your environment up to run the code here, first install all requ
 pip install -r requirements.txt
 ```
 
+probably also 
+```shell
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+```
+
 Then, download the 2 models and place them in a directory of your choice.
 - LLM: default to [ggml-gpt4all-j-v1.3-groovy.bin](https://gpt4all.io/models/ggml-gpt4all-j-v1.3-groovy.bin). If you prefer a different GPT4All-J compatible model, just download it and reference it in your `.env` file.
 - Embedding: default to [ggml-model-q4_0.bin](https://huggingface.co/Pi3141/alpaca-native-7B-ggml/resolve/397e872bf4c83f4c642317a5bf65ce84a105786e/ggml-model-q4_0.bin). If you prefer a different compatible Embeddings model, just download it and reference it in your `.env` file.
@@ -30,6 +35,10 @@ Note: because of the way `langchain` loads the `LLAMMA` embeddings, you need to 
 
 ## Test dataset
 This repo uses a [state of the union transcript](https://github.com/imartinez/privateGPT/blob/main/source_documents/state_of_the_union.txt) as an example.
+## How to prepare your own dataset
+
+For a custom dataset to work for your model in the most effective way, the best way to structure your own dataset is through modern spoken English. For example, a real life speech could be very useful as it will allow the model to give real human-like responses to historical events. However, this may depend on its usage; fictional text could also potentially be used to create a model which, for example could be a role play model for a game. There is no need, however, for there to be a set of questions. Even a transcription of something that you say could be sufficient.
+
 
 ## Instructions for ingesting your own dataset
 
